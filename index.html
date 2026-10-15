@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101112">
+  <meta name="description" content="Explore NOIR, a Netflix-inspired portfolio demo with cinematic covers, searchable titles, and sample playback.">
+  <title>NOIR — Stories after dark</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="./" aria-label="NOIR home">NOIR<span>✦</span></a>
+    <nav aria-label="Main navigation">
+      <button class="nav active" data-page="home">Discover</button>
+      <button class="nav" data-page="movies">Movies</button>
+      <button class="nav" data-page="list">My List <span id="count">0</span></button>
+    </nav>
+    <div class="header-right">
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search titles, genres" aria-label="Search titles and genres" maxlength="200"></label>
+      <span class="avatar demo-badge">Demo</span>
+    </div>
+  </header>
+  <p class="demo-notice" id="demo-notice">Portfolio demo · My List is saved only on this device</p>
+  <main id="main"><div class="loading" role="status">Setting the scene…</div></main>
+  <noscript><p class="empty">Please enable JavaScript to browse this interactive portfolio demo.</p></noscript>
+  <footer>
+    <a class="logo" href="./">NOIR<span>✦</span></a>
+    <p>A little escape. A different perspective.</p>
+    <p class="fine">Netflix-inspired portfolio demo · AI-generated concept covers<br>Visual demo: no accounts or server. My List stays in this browser.<br>Playback: Big Buck Bunny © 2008 Blender Foundation · <a href="https://peach.blender.org/about/" target="_blank" rel="noreferrer">CC BY 3.0</a><br>No affiliation with Netflix. Fictional catalog; one bundled 10-second sample.</p>
+  </footer>
+  <dialog id="detail" aria-label="Title details">
+    <button class="close" aria-label="Close details">×</button>
+    <div id="detail-content"></div>
+  </dialog>
+  <dialog id="player" aria-labelledby="player-title">
+    <button class="close" aria-label="Close video">×</button>
+    <h2 id="player-title"></h2>
+    <video id="video" controls playsinline preload="none"><source src="./media/big-buck-bunny-sample.mp4" type="video/mp4"></video>
+    <p id="video-status" role="status"></p>
+    <p>Sample screening: <strong>Big Buck Bunny</strong> · © 2008 Blender Foundation · <a href="https://peach.blender.org/about/" target="_blank" rel="noreferrer">CC BY 3.0</a>. All titles play this 10-second demo excerpt.</p>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
